@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
     if(result){
       
-        alert("login success")
+        // alert("login success")
         this.router.navigateByUrl('dashboard')
       
     }
