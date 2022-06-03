@@ -22,6 +22,9 @@
                        
                     </div>
 
+        <!-- form valildation -->
+        <div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors" style="color: red;">invalid user</div>
+
                       <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -30,6 +33,8 @@
                           <!-- (change)="acnoChange($event)" -->
                           <!-- #acno   : template variable methode -->
                       </div>
+        <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: red;">invalid account number</div>
+
                       <div class="input-group form-group">
                           <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -38,6 +43,8 @@
                           <!-- (change)="pswdChange($event)" -->
                           <!-- #pswd  : template variable methode -->
                       </div>
+        <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: red;">invalid password</div>
+
                       
                       <div class="form-group">
                           <input type="submit" value="Register"  class="btn float-right login_btn " style="width:50%" >
