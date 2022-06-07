@@ -9,18 +9,15 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   acno=""
   pswd=""
   uname=""
-
   //form group
   registerForm=this.fb.group({
     acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
     pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]],
     uname:['',[Validators.required,Validators.pattern('[a-zA-Z ]*')]]
   })
-
 
   constructor(private ds:DataService,private router:Router,private fb:FormBuilder) { }
 

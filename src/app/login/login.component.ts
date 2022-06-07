@@ -21,14 +21,11 @@ export class LoginComponent implements OnInit {
     pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]],
   })
   
-
-
   constructor(private router:Router,private ds:DataService,private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
 
-  
   acnoChange(event:any){
     this.acno=event.target.value
     console.log(this.acno);
@@ -45,7 +42,8 @@ export class LoginComponent implements OnInit {
     var acno=this.loginForm.value.acno
     var pswd=this.loginForm.value.pswd
 
-    const result = this.ds.login(acno,pswd)
+    if(this.loginForm.valid){
+      const result = this.ds.login(acno,pswd)
 
     if(result){
       
@@ -53,6 +51,13 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('dashboard')
       
     }
+
+    }
+    else{
+      alert("invalid form")
+    }
+
+    
   }
 
   // templete variable methode
