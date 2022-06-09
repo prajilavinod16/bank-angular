@@ -5,8 +5,10 @@
   </nav>
 
   <h2 style="color: white;">Welcome {{user}}</h2>
+  <h5 style="color: white;">{{lDate | date:'short'}}</h5>
   <a routerLink="/transaction">View transaction</a>
   <button class="btn btn-warning" (click)="logout()"   style="float:right; margin-right: 10px;">logout</button>
+  <app-animation></app-animation>
   <hr>
 
 
