@@ -5,16 +5,22 @@
   </nav>
 
   <h2 style="color: white;">Welcome {{user}}</h2>
+  <button class="btn btn-warning" (click)="logout()"   style="float:right; margin-right: 10px;">logout</button>
+  <hr>
+
   <h5 style="color: white;">{{lDate | date:'short'}}</h5>
   <a routerLink="/transaction">View transaction</a>
-  <button class="btn btn-warning" (click)="logout()"   style="float:right; margin-right: 10px;">logout</button>
-  <app-animation></app-animation>
+  <button class="btn btn-danger" (click)="deleteAccount()"   style="float:right; margin-right: 10px;">DELETE</button>
+
+  
+  <app-delet (onCancel)="cancel()" [item]="acno"></app-delet>
+  <!-- <app-animation></app-animation> -->
   <hr>
 
 
   
   <!-- deposit section  -->
-  <div class="container col-md-12 mt-0">
+  <div  [ngClass]="acno?'c1':''" class="container col-md-12 mt-0">
       <div class="d-flex justify-content-center h-100">
           <div class="card">
               <div class="card-header">
@@ -67,7 +73,7 @@
 
   <!-- withdraw section -->
 
-  <div class="container col-md-12 mt-0">
+  <div [ngClass]="acno?'c1':''" class="container col-md-12 mt-0">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
