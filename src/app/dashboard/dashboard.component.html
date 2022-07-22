@@ -12,8 +12,9 @@
   <a routerLink="/transaction">View transaction</a>
   <button class="btn btn-danger" (click)="deleteAccount()"   style="float:right; margin-right: 10px;">DELETE</button>
 
+  <!-- child selector -->
   
-  <app-delet (onCancel)="cancel()" [item]="acno"></app-delet>
+  <app-delet (onDelete)="onDelete($event)" (onCancel)="cancel()" [item]="acno"></app-delet>
   <!-- <app-animation></app-animation> -->
   <hr>
 
@@ -24,7 +25,7 @@
       <div class="d-flex justify-content-center h-100">
           <div class="card">
               <div class="card-header">
-                  <h3 class="text-center">Deposit</h3>
+                  <h3 appHighlight class="text-center">Deposit</h3>
                   
               </div>
               <div class="card-body">
@@ -77,7 +78,7 @@
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
-                <h3 class="text-center">withdraw</h3>
+                <h3 appHighlight class="text-center">withdraw</h3>
                 
             </div>
             <div class="card-body">

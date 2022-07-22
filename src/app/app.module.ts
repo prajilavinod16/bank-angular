@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AnimationComponent } from './animation/animation.component';
 import { DeletComponent } from './delet/delet.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { DeletComponent } from './delet/delet.component';
     DashboardComponent,
     TransactionComponent,
     AnimationComponent,
-    DeletComponent
+    DeletComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
